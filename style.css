@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #E04040;
+  margin: 0;
+  padding: 0;
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: calc(100%);
+}
+
+.name {
+  font-family: 'Roboto Slab', serif;
+  font-size: 66px;
+  animation: 0.6s ease-out 0s 1 SlideToRight;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.bioText {
+  font-family: 'Roboto', sans-serif;
+}
+
+.skillsWrapper {
+  height: 100vh;
+  order: 2;
+  display: flex;
+  align-items: center;
+  background-color: #F9EEEE;
+  animation: 1.4s ease-out 0s 1 SlideToLeft;
+  overflow: hidden;
+}
+
+.skillsWrapperContent {
+  position: relative;
+  width: 580px;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+}
+
+.skillInfo {
+  width: 100%;
+  background-color: #E8DFDF;
+  margin-bottom: 10px;
+}
+
+.skillInfoChild {
+  padding: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.skillInfo img {
+  height: 90px;
+  margin-right: 12px;
+  width: 64px;
+}
+
+@keyframes SlideToRight {
+  0% {
+    transform: translateX(-400%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideToLeft {
+  0% {
+    transform: translateX(400%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+  .skillsWrapper {
+    order: 1;
+    background-color: transparent;
+  }
+  .skillInfo {
+    background-color: transparent;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .name {
+    margin-top: 48px;
+  }
+}
