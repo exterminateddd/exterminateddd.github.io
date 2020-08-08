@@ -75,7 +75,7 @@ img {
 }
 
 @media screen and (max-width: 480px){
-  .img {
+  a {
     width: 36px;
   }
   .name {
