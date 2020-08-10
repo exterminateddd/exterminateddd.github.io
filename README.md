@@ -3,4 +3,4 @@
 # My name is Dany
 # I am a Python developer
 Nav:
-exterminateddd.github.com/
+exterminateddd.github.io/
