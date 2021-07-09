@@ -2,7 +2,7 @@
 
 # My name is Dany
 # I am a Python developer
-## [Check my card for contacts](https://exterminateddd.github.io "Visit Card Website")
+[Check my card for contacts](https://exterminateddd.github.io "Visit Card Website")
 [<img src="https://www.codewars.com/users/exterminateddd/badges/large">](https://www.codewars.com/users/exterminateddd)
 ## 
 [![exterminateddd's github stats](https://github-readme-stats.vercel.app/api?username=exterminateddd&show_icons=true&theme=radical&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
