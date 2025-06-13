@@ -3,6 +3,7 @@ const scrollButton2 = document.getElementById("scrollDownToContacts");
 const headerBottomPart = document.querySelector(".headerBtm");
 const containerBottomPart = document.querySelector(".containerBtm");
 const hideContactsButton = document.getElementById("hideContacts");
+// const cvContainer = document.getElementById('cvContainer');
 const footer = document.querySelector("footer");
 
 const scrollDown = () => {
@@ -15,3 +16,5 @@ containerBottomPart.addEventListener('click', (e) => {scrollDown()});
 hideContactsButton.addEventListener('click', (e) => {
     window.scrollBy(0, -footer.scrollHeight-1)
 })
+
+// fetch('./cv.md').then((r) => r.text().then((text) => {cvContainer.mdContent = text}))

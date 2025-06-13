@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', serif;
+        }
+        body {
+            padding: 24px!important;
+        }
+    </style>
+</head>
+<body>
+    <md-block id="cvContainer">
+        # meow
+        ## hi
+    </md-block>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <script>
+        const cvContainer = document.getElementById('cvContainer');
+        fetch('./cv.md').then((r) => r.text().then((text) => {cvContainer.mdContent = text}));
+    </script>
+</body>
+</html>
