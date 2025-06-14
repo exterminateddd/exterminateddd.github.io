@@ -13,17 +13,28 @@
         body {
             padding: 24px!important;
         }
+        #reload {
+            font-size: larger;
+        }
     </style>
 </head>
 <body>
     <md-block id="cvContainer">
-        # meow
-        ## hi
+        
     </md-block>
+    <button href="." id="reload">если резюме не появилось, нажмите</button>
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <script>
         const cvContainer = document.getElementById('cvContainer');
-        fetch('./cv.md').then((r) => r.text().then((text) => {cvContainer.mdContent = text}));
+        const reloadBtn = document.getElementById('reload');
+        function updateMdBlock() {
+            fetch('./cv.md')
+                .then((r) => r.text().then(
+                    (text) => cvContainer.mdContent = text
+                ));
+        }
+        window.addEventListener('load', (e) => updateMdBlock())
+        reloadBtn.onclick = (e) => updateMdBlock()
     </script>
 </body>
 </html>

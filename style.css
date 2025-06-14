@@ -18,6 +18,18 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+#cv-link>a, #cv-link:active>a {
+  text-decoration: none;
+  color: rgb(53, 39, 39);
+  display: inline-block;
+}
+#cv-link:hover>a {
+  text-decoration: underline;
+}
+/* #cv-link {display: none;}
+.headerMid:hover #cv-link {
+  display: block;
+} */
 
 body {
   background-color: #E04040;
