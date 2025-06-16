@@ -40,7 +40,10 @@
         function updateMdBlock() {
             fetch('./cv.md')
                 .then((r) => r.text().then(
-                    (text) => cvContainer.mdContent = text
+                    (text) => {
+                        cvContainer.mdContent = text;
+                        reloadBtn.classList.add('hidden')
+                    }
                 ));
         }
         function updateCerts() {
