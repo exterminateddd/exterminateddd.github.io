@@ -16,16 +16,26 @@
         #reload {
             font-size: larger;
         }
+        .hidden {display: none;}
+        #certList > li {
+            display: block;
+        }
+        #certListContainer {
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
     <md-block id="cvContainer">
         
     </md-block>
-    <button href="." id="reload">если резюме не появилось, нажмите</button>
+    <div id="certListContainer"><ul id="certList"></ul></div>
+    <button href="." id="reload" class="hidden">если резюме не появилось, нажмите</button>
+    <input type="file" webkitdirectory directory id="directoryInput">
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <script>
         const cvContainer = document.getElementById('cvContainer');
+        const certList = document.getElementById('certList');
         const reloadBtn = document.getElementById('reload');
         function updateMdBlock() {
             fetch('./cv.md')
@@ -33,7 +43,17 @@
                     (text) => cvContainer.mdContent = text
                 ));
         }
-        window.addEventListener('load', (e) => updateMdBlock())
+        function updateCerts() {
+            fetch('./certificates/list.txt')
+                .then((r) => r.text())
+                .then((text) => text.split('\n'))
+                .then((filenames) => {
+                    for (let filename of filenames) {
+                        certList.innerHTML += `<li><a target="_blank" href="./certificates/${filename}">${filename}</a></li>`;
+                    }
+                })
+        }
+        window.addEventListener('load', (e) => {updateMdBlock(); updateCerts();})
         reloadBtn.onclick = (e) => updateMdBlock()
     </script>
 </body>
